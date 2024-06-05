@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <title>ToDo App</title>
+</head>
+    <div class="app">
+        <h1>HTMX ToDo App</h1>
+        <div class="top-bar">
+            <div class="task-counter">
+                <h2>Taks</h2>
+                <div class="row">
+                    <span class="completed-count">4</span>
+                    <span class="total-count">15</span>
+                </div>
+            </div>
+            <form id="todoform" hx-post="/api.php?action=add_todo" autocomplete="off">
+                <div class="row">
+                    <input type="text" placeholder="Add todo ..." name="todo" class="todo">
+                    <button>Add todo</button>
+                </div>
+                <select name="category" class="category-select">
+                    <option value="">-- Select category --</option>
+                    <option>General</option>
+                    <option>House</option>
+                    <option>Car</option>
+                    <option>Shopping</option>
+                </select>
+            </form>
+        </div>
+        <main>
+            <div class="sidebar"></div>
+        </main>
+</html>
